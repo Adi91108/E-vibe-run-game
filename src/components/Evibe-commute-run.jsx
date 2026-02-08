@@ -261,10 +261,11 @@ const EVIBECommuteRun = () => {
 
   const handleExploreClick = () => {
     setAnalytics(a => ({ ...a, exploreClicked: true }));
-    // In production, redirect to Shopify page
-    // window.location.href = 'https://your-shopify-store.com/products/evibe';
-    alert('Redirecting to E-VIBE product page...\n\nIn production, this would open your Shopify store.');
-    downloadAnalytics();
+    // downloadAnalytics();
+    // Redirect after a short delay to ensure download starts
+    setTimeout(() => {
+      window.location.href = 'https://e-vibe-five.vercel.app/';
+    }, 500);
   };
 
   const downloadAnalytics = () => {
@@ -748,7 +749,7 @@ End Time,${data.endTime}`;
               onClick={handleExploreClick}
               className="font-fredoka w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 text-white text-3xl font-black py-8 px-8 rounded-3xl hover:from-emerald-600 hover:via-teal-600 hover:to-green-600 transition-all duration-300 shadow-2xl hover:shadow-emerald-500/50 transform hover:scale-105 active:scale-95 mb-4"
             >
-              👉 Explore E-VIBE
+              👉 Explore E-VIBE Quiz
             </button>
 
             {/* Secondary actions */}
